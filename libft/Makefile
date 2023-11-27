@@ -78,7 +78,8 @@ SRCS := ft_isalpha.c \
 	ft_lstiter.c \
 	ft_lstmap.c \
 	get_next_line.c \
-	get_next_line_utils.c
+	get_next_line_utils.c \
+	ft_putnbr_base.c
 
 OBJS = $(patsubst %, $(PATHOBJ)/%, $(notdir $(SRCS:.c=.o)))
 

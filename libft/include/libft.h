@@ -6,7 +6,7 @@
 /*   By: cnatanae <cnatanae@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 14:41:11 by cnatanae          #+#    #+#             */
-/*   Updated: 2023/11/27 09:56:09 by cnatanae         ###   ########.fr       */
+/*   Updated: 2023/11/27 13:26:56 by cnatanae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include "get_next_line.h"
+
+# define HEXAMIN "0123456789abcdef"
+# define HEXAMAX "0123456789ABCDEF"
 
 /**@brief This structure is a linked list.
  * 
@@ -411,5 +414,13 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
  * @return The pointer to the new list
 */
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+/**@brief This function print a number in a specify base
+ * 
+ * @param num num to be printed
+ * @param base base to printed number
+ * @return Number of characters printed
+*/
+int	ft_putnbr_base(long long num, int base, int min_max);
 
 #endif
