@@ -44,6 +44,7 @@ OBJS = $(patsubst %, $(OBJS_PATH)/%, $(notdir $(SRCS:.c=.o)))
 
 # ! --------------------------------------------------------------------------------------------------------------------------------
 # ! RULES
+
 all: $(LIBFT) $(NAME)
 
 $(LIBFT):
@@ -55,12 +56,10 @@ folder:
 $(OBJS_PATH)/%.o: $(SRCS_PATH)/%.c
 	@$(SLEEP)
 	@$(CC) $(CFLAGS) -I $(INCS_PATH) -I $(LIBFT_PATH)include -c $< -o $@
-	@printf "$(YELLOW)Compiling:$(FCOLOR) $(PURPLE)$<$(FCOLOR)\n"
 
 $(NAME): folder $(OBJS)
+	@printf "$(YELLOW)Compiling:$(FCOLOR) $(PURPLE)$<$(FCOLOR)\n"
 	@$(AR) $@ $(OBJS) $(LIBFT_PATH)obj/*.o
-	@$(SLEEP)
-	@printf "$(GREEN)Compiled:$(FCOLOR) $(PURPLE)$@$(FCOLOR)\n"
 
 clean:
 	@$(MAKE) -sC $(LIBFT_PATH) clean

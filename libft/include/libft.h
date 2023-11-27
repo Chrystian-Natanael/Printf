@@ -6,7 +6,7 @@
 /*   By: cnatanae <cnatanae@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 14:41:11 by cnatanae          #+#    #+#             */
-/*   Updated: 2023/11/27 13:46:46 by cnatanae         ###   ########.fr       */
+/*   Updated: 2023/11/27 14:46:21 by cnatanae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -417,6 +417,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 /**@brief This function print a number in a specify base
  * 
+ * VERSION OF FT_PRINTF
  * @param num num to be printed
  * @param base base to printed number
  * @return Number of characters printed

@@ -105,7 +105,6 @@ $(PATHOBJ)/%.o: $(PATHSRC)/%.c
 
 $(NAME): $(OBJS)
 	@sleep 0.01
-	@printf "$(GREEN)[COMPILED] - OK $(FCOLOR)\n"
 
 clean:
 	@$(RM) $(PATHOBJ)
