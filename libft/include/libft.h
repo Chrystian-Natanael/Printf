@@ -6,7 +6,7 @@
 /*   By: cnatanae <cnatanae@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 14:41:11 by cnatanae          #+#    #+#             */
-/*   Updated: 2023/11/27 13:26:56 by cnatanae         ###   ########.fr       */
+/*   Updated: 2023/11/27 13:46:46 by cnatanae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -421,6 +421,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
  * @param base base to printed number
  * @return Number of characters printed
 */
-int	ft_putnbr_base(long long num, int base, int min_max);
+int		ft_putnbr_base(long long num, int base, int min_max);
 
 #endif
