@@ -6,7 +6,7 @@
 /*   By: cnatanae <cnatanae@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 14:41:11 by cnatanae          #+#    #+#             */
-/*   Updated: 2023/11/22 15:44:02 by cnatanae         ###   ########.fr       */
+/*   Updated: 2023/11/27 09:56:09 by cnatanae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -298,7 +298,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *));
  * @param fd a file descriptor
  * @return void
 */
-void	ft_putchar_fd(char c, int fd);
+int		ft_putchar_fd(char c, int fd);
 
 /**@brief this function Outputs the string ’s’ to the given file
  * descriptor.
@@ -307,7 +307,7 @@ void	ft_putchar_fd(char c, int fd);
  * @param fd a file descriptor
  * @return void
 */
-void	ft_putstr_fd(char *s, int fd);
+int		ft_putstr_fd(char *s, int fd);
 
 /**@brief this function Outputs the string ’s’ to the given file descriptor
  * followed by a newline.
@@ -316,7 +316,7 @@ void	ft_putstr_fd(char *s, int fd);
  * @param fd a file descriptor
  * @return void
 */
-void	ft_putendl_fd(char *s, int fd);
+int		ft_putendl_fd(char *s, int fd);
 
 /**@brief this function Outputs the integer ’n’ to the given file
  * descriptor.
@@ -325,7 +325,7 @@ void	ft_putendl_fd(char *s, int fd);
  * @param fd a file descriptor
  * @return void	
 */
-void	ft_putnbr_fd(int n, int fd);
+int		ft_putnbr_fd(int n, int fd);
 
 /**@brief this function Allocates (with malloc(3)) and returns a new node.
  * The member variable ’content’ is initialized with

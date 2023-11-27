@@ -6,28 +6,31 @@
 /*   By: cnatanae <cnatanae@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 11:52:43 by cnatanae          #+#    #+#             */
-/*   Updated: 2023/10/23 19:04:24 by cnatanae         ###   ########.fr       */
+/*   Updated: 2023/11/27 11:16:01 by cnatanae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+int	ft_putnbr_fd(int n, int fd)
 {
 	long int	nb;
+	int			count;
 
 	nb = n;
+	count = 0;
 	if (nb < 0)
 	{
-		ft_putchar_fd('-', fd);
+		count += ft_putchar_fd('-', fd);
 		nb = -nb;
 	}
 	if (nb < 10)
 	{
-		ft_putchar_fd (nb + '0', fd);
-		return ;
+		count += ft_putchar_fd (nb + '0', fd);
+		return (count);
 	}
 	else
-		ft_putnbr_fd(nb / 10, fd);
-	ft_putnbr_fd (nb % 10, fd);
+		count += ft_putnbr_fd(nb / 10, fd);
+	count += ft_putnbr_fd (nb % 10, fd);
+	return (count);
 }

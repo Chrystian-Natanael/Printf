@@ -6,17 +6,26 @@
 /*   By: cnatanae <cnatanae@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 11:41:12 by cnatanae          #+#    #+#             */
-/*   Updated: 2023/10/20 11:42:57 by cnatanae         ###   ########.fr       */
+/*   Updated: 2023/11/27 12:12:09 by cnatanae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+int	ft_putstr_fd(char *s, int fd)
 {
+	int	count;
+
+	count = 0;
+	if (s == NULL)
+	{
+		write(fd, "(null)", 6);
+		return (6);
+	}
 	while (*s)
 	{
-		ft_putchar_fd(*s, fd);
+		count += ft_putchar_fd(*s, fd);
 		s++;
 	}
+	return (count);
 }

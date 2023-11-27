@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cnatanae <cnatanae@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/20 11:47:41 by cnatanae          #+#    #+#             */
-/*   Updated: 2023/11/27 09:56:49 by cnatanae         ###   ########.fr       */
+/*   Created: 2023/11/27 09:19:52 by cnatanae          #+#    #+#             */
+/*   Updated: 2023/11/27 11:21:39 by cnatanae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
-int	ft_putendl_fd(char *s, int fd)
-{
-	int	count;
+# include "../libft/include/libft.h"
+# include <stdarg.h>
+# include <unistd.h>
+# include <stdlib.h>
 
-	count = ft_putstr_fd(s, fd);
-	count += ft_putchar_fd('\n', fd);
-	return (count);
-}
+# define HEXAMIN "0123456789abcdef"
+# define HEXAMAX "0123456789ABCDEF"
+
+int	ft_printf(const char *format, ...);
+int	ft_parse(char specifier, va_list ap);
+
+#endif

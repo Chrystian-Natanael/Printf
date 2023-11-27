@@ -6,7 +6,7 @@
 /*   By: cnatanae <cnatanae@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 12:53:15 by cnatanae          #+#    #+#             */
-/*   Updated: 2023/11/22 15:58:41 by cnatanae         ###   ########.fr       */
+/*   Updated: 2023/11/27 11:16:23 by cnatanae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ char	*ft_add_lk(t_listgnl *struc)
 char	*get_next_line(int fd)
 {
 	static t_listgnl	struc[1024];
-	char			*line;
+	char				*line;
 
 	if (fd < 0 || fd > 1024 || BUFFER_SIZE <= 0)
 		return (NULL);

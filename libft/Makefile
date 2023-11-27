@@ -2,7 +2,8 @@
 # ! NAME
 
 NAME := libft.a
-.PHONY:	all clean fclean re bonus
+.PHONY:	all clean fclean re
+.DEFAULT_GOAL := all
 
 # ! --------------------------------------------------------------------------------------------------------------------------------
 # ! COLORS
@@ -102,14 +103,11 @@ $(PATHOBJ)/%.o: $(PATHSRC)/%.c
 	@printf "Compiling $(YELLOW)LIBFT %d%%\r$(FCOLOR)" $$(echo $$(($(COUNT) * 100 / $(words $(SRCS)))))
 
 $(NAME): $(OBJS)
-	@$(AR) $@ $?
 	@sleep 0.01
 	@printf "$(GREEN)[COMPILED] - OK $(FCOLOR)\n"
 
 clean:
-	@printf "$(RED)[CLEANING - Objects] $(FCOLOR)\n"
 	@$(RM) $(PATHOBJ)
-	@printf "$(GREEN)[CLEANED] - OK$(FCOLOR)\n"
 
 fclean:	clean
 	@$(RM) $(PATHOBJ)
