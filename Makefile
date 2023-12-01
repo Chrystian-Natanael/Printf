@@ -2,7 +2,7 @@
 # ! NAME
 
 NAME := libftprintf.a
-.PHONY:	all clean fclean re bonus
+.PHONY:	all clean fclean re
 .DEFAULT_GOAL := all
 
 # ! --------------------------------------------------------------------------------------------------------------------------------
@@ -70,5 +70,3 @@ fclean: clean
 	@$(RM) $(NAME)
 
 re: fclean all
-
-bonus:

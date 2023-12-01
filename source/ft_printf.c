@@ -6,27 +6,29 @@
 /*   By: cnatanae <cnatanae@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 09:15:44 by cnatanae          #+#    #+#             */
-/*   Updated: 2023/11/27 13:43:35 by cnatanae         ###   ########.fr       */
+/*   Updated: 2023/12/01 08:21:44 by cnatanae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 
-int	ft_put_ptr(unsigned long long pointer, int prefix)
+static int	ft_put_ptr(unsigned long long pointer, int prefix);
+
+static int	ft_put_ptr(unsigned long long pointer, int prefix)
 {
 	int			count;
 
 	count = 0;
 	if (!pointer)
 	{
-		count += ft_putstr_fd("(nil)", 1);
+		count += ft_putstr_fd(NULL_PTR, ON);
 		return (count);
 	}
 	if (prefix)
-		count += ft_putstr_fd("0x", 1);
-	if (pointer >= 16)
-		count += ft_put_ptr(pointer / 16, 0);
-	count += ft_putchar_fd(HEXAMIN[pointer % 16], 1);
+		count += ft_putstr_fd("0x", ON);
+	if (pointer >= BASE_HEXA)
+		count += ft_put_ptr(pointer / BASE_HEXA, OFF);
+	count += ft_putchar_fd(HEXAMIN[pointer % BASE_HEXA], ON);
 	return (count);
 }
 
@@ -36,21 +38,21 @@ int	ft_parse(char specifier, va_list ap)
 
 	count = 0;
 	if (specifier == 'c')
-		count += ft_putchar_fd(va_arg(ap, int), 1);
+		count += ft_putchar_fd(va_arg(ap, int), ON);
 	else if (specifier == 's')
-		count += ft_putstr_fd(va_arg(ap, char *), 1);
+		count += ft_putstr_fd(va_arg(ap, char *), ON);
 	else if (specifier == 'p')
-		count += ft_put_ptr(va_arg(ap, unsigned long long), 1);
+		count += ft_put_ptr(va_arg(ap, t_unlolo), ON);
 	else if (specifier == 'd' || specifier == 'i')
-		count += ft_putnbr_base((long)va_arg(ap, int), 10, 0);
+		count += ft_putnbr_base((t_lolo)va_arg(ap, int), BASE_DEC, OFF);
 	else if (specifier == 'u')
-		count += ft_putnbr_base((long)va_arg(ap, unsigned int), 10, 0);
+		count += ft_putnbr_base((t_lolo)va_arg(ap, t_uni), BASE_DEC, OFF);
 	else if (specifier == 'x')
-		count += ft_putnbr_base((long)va_arg(ap, unsigned int), 16, 1);
+		count += ft_putnbr_base((t_lolo)va_arg(ap, t_uni), BASE_HEXA, ON);
 	else if (specifier == 'X')
-		count += ft_putnbr_base((long)va_arg(ap, unsigned int), 16, 0);
+		count += ft_putnbr_base((t_lolo)va_arg(ap, t_uni), BASE_HEXA, OFF);
 	else if (specifier == '%')
-		count += ft_putchar_fd('%', 1);
+		count += ft_putchar_fd('%', ON);
 	return (count);
 }
 
@@ -68,7 +70,7 @@ int	ft_printf(const char *format, ...)
 		if (*format == '%')
 			count += ft_parse(*(++format), ap);
 		else
-			count += ft_putchar_fd(*format, 1);
+			count += ft_putchar_fd(*format, ON);
 		format++;
 	}
 	va_end(ap);
