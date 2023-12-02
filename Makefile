@@ -64,14 +64,14 @@ $(NAME): folder $(OBJS)
 clean:
 	@$(MAKE) -sC $(LIBFT_PATH) clean
 	@$(RM) $(OBJS_PATH)
+	@printf "$(RED)Cleaned files:$(FCOLOR)$(PURPLE) .o$(FCOLOR)\n"
 
 fclean: clean
-	@$(MAKE) -C $(LIBFT_PATH) fclean
+	@$(MAKE) -sC $(LIBFT_PATH) fclean
 	@$(RM) $(NAME)
+	@printf "$(RED)Cleaned lib:$(FCOLOR)$(PURPLE) $(NAME)$(FCOLOR)\n"
 
 re: fclean all
 
 # ! --------------------------------------------------------------------------------------------------------------------------------
 # ! BONUS
-
-bonus: all
