@@ -58,8 +58,8 @@ $(OBJS_PATH)/%.o: $(SRCS_PATH)/%.c
 	@$(CC) $(CFLAGS) -I $(INCS_PATH) -I $(LIBFT_PATH)include -c $< -o $@
 
 $(NAME): folder $(OBJS)
-	@printf "$(YELLOW)Compiling:$(FCOLOR) $(PURPLE)$<$(FCOLOR)\n"
 	@$(AR) $@ $(OBJS) $(LIBFT_PATH)obj/*.o
+	@printf "$(GREEN)Compiled:$(FCOLOR) $(PURPLE)$(NAME)$(FCOLOR)\n"
 
 clean:
 	@$(MAKE) -sC $(LIBFT_PATH) clean
@@ -70,3 +70,8 @@ fclean: clean
 	@$(RM) $(NAME)
 
 re: fclean all
+
+# ! --------------------------------------------------------------------------------------------------------------------------------
+# ! BONUS
+
+bonus: all
