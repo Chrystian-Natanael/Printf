@@ -6,7 +6,7 @@
 /*   By: cnatanae <cnatanae@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 09:19:52 by cnatanae          #+#    #+#             */
-/*   Updated: 2023/12/04 05:50:15 by cnatanae         ###   ########.fr       */
+/*   Updated: 2023/12/04 09:22:36 by cnatanae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,11 @@ typedef unsigned int		t_uni;
 
 int	ft_printf(const char *format, ...);
 int	ft_parse(char specifier, va_list ap);
+int	ft_flag_check(const char *format, va_list ap);
+int	ft_hash(const char *format, va_list ap);
+int	ft_plus(const char *format, va_list ap);
+int	ft_put_ptr(unsigned long long pointer, int prefix);
+int	ft_space_s(const char *format, va_list ap);
+int	ft_space(const char *format, va_list ap);
 
 #endif

@@ -1,43 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_space_s.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cnatanae <cnatanae@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/27 09:15:44 by cnatanae          #+#    #+#             */
-/*   Updated: 2023/12/04 09:21:14 by cnatanae         ###   ########.fr       */
+/*   Created: 2023/12/04 09:19:34 by cnatanae          #+#    #+#             */
+/*   Updated: 2023/12/04 09:27:37 by cnatanae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 
-int	ft_printf(const char *format, ...)
+int	ft_space_s(const char *format, va_list ap)
 {
-	va_list	ap;
+	int		numb;
 	int		count;
+	char	*value_string;
 
-	if (!format)
-		return (0);
-	va_start(ap, format);
+	numb = ft_atoi(format);
 	count = 0;
-	while (*format)
-	{
-		if (*format == '%')
-		{
-			if ((ft_strrchr(FLAGS, *(format + 1))))
-			{
-				count += ft_flag_check(++format, ap);
-				while ((ft_strrchr(FLAGS, *(format))) || ft_isdigit(*format))
-					format++;
-			}
-			else
-				count += ft_parse(*(++format), ap);
-		}
-		else
-			count += ft_putchar_fd(*format, ON);
+	while (ft_isdigit(*format))
 		format++;
+	if (*format == 's')
+	{
+		if (numb > 0)
+		{
+			while (numb--)
+				count += ft_putchar_fd(' ', 1);
+		}
+		value_string = va_arg(ap, char *);
+		if (value_string == NULL)
+			return (ft_putstr_fd(NULL_STR, 1) + count);
+		return (ft_putstr_fd(value_string, 1) + count);
 	}
-	va_end(ap);
 	return (count);
 }

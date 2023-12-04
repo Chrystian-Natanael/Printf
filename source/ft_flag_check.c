@@ -1,43 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_flag_check.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cnatanae <cnatanae@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/27 09:15:44 by cnatanae          #+#    #+#             */
-/*   Updated: 2023/12/04 09:21:14 by cnatanae         ###   ########.fr       */
+/*   Created: 2023/12/04 09:18:07 by cnatanae          #+#    #+#             */
+/*   Updated: 2023/12/04 09:25:50 by cnatanae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 
-int	ft_printf(const char *format, ...)
+int	ft_flag_check(const char *format, va_list ap)
 {
-	va_list	ap;
-	int		count;
+	int	count;
 
-	if (!format)
-		return (0);
-	va_start(ap, format);
 	count = 0;
-	while (*format)
-	{
-		if (*format == '%')
-		{
-			if ((ft_strrchr(FLAGS, *(format + 1))))
-			{
-				count += ft_flag_check(++format, ap);
-				while ((ft_strrchr(FLAGS, *(format))) || ft_isdigit(*format))
-					format++;
-			}
-			else
-				count += ft_parse(*(++format), ap);
-		}
-		else
-			count += ft_putchar_fd(*format, ON);
-		format++;
-	}
-	va_end(ap);
+	if (*format == '#')
+		count += ft_hash(++format, ap);
+	else if (*format == '+')
+		count += ft_plus(++format, ap);
+	else if (*format == ' ')
+		count += ft_space(++format, ap);
 	return (count);
 }

@@ -1,43 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_put_ptr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cnatanae <cnatanae@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/27 09:15:44 by cnatanae          #+#    #+#             */
-/*   Updated: 2023/12/04 09:21:14 by cnatanae         ###   ########.fr       */
+/*   Created: 2023/12/04 09:21:20 by cnatanae          #+#    #+#             */
+/*   Updated: 2023/12/04 09:26:01 by cnatanae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 
-int	ft_printf(const char *format, ...)
+int	ft_put_ptr(unsigned long long pointer, int prefix)
 {
-	va_list	ap;
-	int		count;
+	int			count;
 
-	if (!format)
-		return (0);
-	va_start(ap, format);
 	count = 0;
-	while (*format)
+	if (!pointer)
 	{
-		if (*format == '%')
-		{
-			if ((ft_strrchr(FLAGS, *(format + 1))))
-			{
-				count += ft_flag_check(++format, ap);
-				while ((ft_strrchr(FLAGS, *(format))) || ft_isdigit(*format))
-					format++;
-			}
-			else
-				count += ft_parse(*(++format), ap);
-		}
-		else
-			count += ft_putchar_fd(*format, ON);
-		format++;
+		count += ft_putstr_fd(NULL_PTR, ON);
+		return (count);
 	}
-	va_end(ap);
+	if (prefix)
+		count += ft_putstr_fd("0x", ON);
+	if (pointer >= BASE_HEXA)
+		count += ft_put_ptr(pointer / BASE_HEXA, OFF);
+	count += ft_putchar_fd(HEXAMIN[pointer % BASE_HEXA], ON);
 	return (count);
 }

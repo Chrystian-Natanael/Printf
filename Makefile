@@ -38,7 +38,14 @@ CFLAGS = -Wall -Wextra -Werror -g -O0
 # ! --------------------------------------------------------------------------------------------------------------------------------
 # ! FILES
 
-SRCS = ft_printf.c
+SRCS =	ft_printf.c \
+		ft_flag_check.c \
+		ft_hash.c \
+		ft_parse.c \
+		ft_plus.c \
+		ft_put_ptr.c \
+		ft_space.c \
+		ft_space_s.c \
 
 OBJS = $(patsubst %, $(OBJS_PATH)/%, $(notdir $(SRCS:.c=.o)))
 
