@@ -6,7 +6,7 @@
 /*   By: cnatanae <cnatanae@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 09:19:52 by cnatanae          #+#    #+#             */
-/*   Updated: 2023/12/01 08:16:58 by cnatanae         ###   ########.fr       */
+/*   Updated: 2023/12/04 05:50:15 by cnatanae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 # define BASE_HEXA 16
 # define NULL_PTR "(nil)"
 # define NULL_STR "(null)"
+# define FLAGS "+ #"
 
 typedef long long			t_lolo;
 typedef unsigned long long	t_unlolo;
