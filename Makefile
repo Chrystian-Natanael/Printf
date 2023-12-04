@@ -46,6 +46,7 @@ SRCS =	ft_printf.c \
 		ft_put_ptr.c \
 		ft_space.c \
 		ft_space_s.c \
+		ft_print_build.c
 
 OBJS = $(patsubst %, $(OBJS_PATH)/%, $(notdir $(SRCS:.c=.o)))
 

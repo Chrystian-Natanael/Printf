@@ -6,7 +6,7 @@
 /*   By: cnatanae <cnatanae@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 09:19:52 by cnatanae          #+#    #+#             */
-/*   Updated: 2023/12/04 09:22:36 by cnatanae         ###   ########.fr       */
+/*   Updated: 2023/12/04 10:19:58 by cnatanae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,5 @@ int	ft_plus(const char *format, va_list ap);
 int	ft_put_ptr(unsigned long long pointer, int prefix);
 int	ft_space_s(const char *format, va_list ap);
 int	ft_space(const char *format, va_list ap);
-
+int	ft_print_build(const char *format, va_list ap);
 #endif
