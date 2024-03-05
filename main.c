@@ -5,10 +5,13 @@
 int	main(void)
 {
 	int	count;
+	char *str = "Hello World!";
 
-	count = ft_printf("|% 10000s|\n", "ue");
+	printf("|% 100s|", str);
+
+	// count = ft_printf("|% 10s|\n", str);
 	// ft_printf("count: %d\n", count);
-	// count = printf("|% 10s|\n", "");
+	// count = printf("|% 10s|\n", str);
 	// ft_printf("count: %d\n", count);
 	return (0);
 }
