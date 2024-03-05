@@ -16,14 +16,13 @@
 
 <h3> 🦮 Summary: 🦮 <br>
 <br>
-<a href="" style="color: inherit; text-decoration: none;">🔗 What's the PRINTF? </a> <br> <br>
-<a href="" style="color: inherit; text-decoration: none;">🔗 Mandatory part </a> <br> <br>
-<a href="" style="color: inherit; text-decoration: none;">🔗 cspdiuxX% </a> <br><br>
-<a href="" style="color: inherit; text-decoration: none;">🔗 Variadic function </a> <br><br>
-<a href="" style="color: inherit; text-decoration: none;">🔗 How to use the printf? </a> <br><br>
-<a href="" style="color: inherit; text-decoration: none;">🔗 Bonus part </a> <br><br>
-<a href="" style="color: inherit; text-decoration: none;">🔗 How to use the printf? </a> <br><br>
-<a href="" style="color: inherit; text-decoration: none;">🔗 How to use my printf? </a> <br><br>
+<a href="https://github.com/Chrystian-Natanael/Printf?tab=readme-ov-file#what-is-printf-" style="color: inherit; text-decoration: none;">🔗 What's the PRINTF? </a> <br> <br>
+<a href="https://github.com/Chrystian-Natanael/Printf?tab=readme-ov-file#mandatory-part-" style="color: inherit; text-decoration: none;">🔗 Mandatory part </a> <br> <br>
+<a href="https://github.com/Chrystian-Natanael/Printf?tab=readme-ov-file#cspdiuxx" style="color: inherit; text-decoration: none;">🔗 cspdiuxX% </a> <br><br>
+<a href="https://github.com/Chrystian-Natanael/Printf?tab=readme-ov-file#variadic-function-" style="color: inherit; text-decoration: none;">🔗 Variadic function </a> <br><br>
+<a href="https://github.com/Chrystian-Natanael/Printf?tab=readme-ov-file#how-to-use-the-printf-" style="color: inherit; text-decoration: none;">🔗 How to use the printf? </a> <br><br>
+<a href="https://github.com/Chrystian-Natanael/Printf?tab=readme-ov-file#bonus-part-" style="color: inherit; text-decoration: none;">🔗 Bonus part </a> <br><br>
+<a href="https://github.com/Chrystian-Natanael/Printf?tab=readme-ov-file#how-to-use-my-printf" style="color: inherit; text-decoration: none;">🔗 How to use my printf? </a> <br><br>
 </h3>
 
 ## `What is PRINTF?` 🤔
